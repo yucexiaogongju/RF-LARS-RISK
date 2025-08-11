@@ -53,16 +53,15 @@ except Exception as e:
 status_text.text("正在准备输入界面...")
 progress_bar.progress(70)
 st.sidebar.header("请输入以下特征：")
-age = st.sidebar.number_input("年龄", min_value=0.0, max_value=120.0, value=50.0, step=1.0)
-BMI = st.sidebar.number_input("BMI", min_value=10.0, max_value=50.0, value=22.0, step=0.1)
-tumor_dist = st.sidebar.number_input("肿瘤距离", min_value=0.0, max_value=50.0, value=5.0, step=0.1)
-surg_time = st.sidebar.number_input("手术时间", min_value=0.0, max_value=600.0, value=180.0, step=1.0)
-exhaust = st.sidebar.number_input("排气天数", min_value=0.0, max_value=30.0, value=2.0, step=0.5)
-tumor_size = st.sidebar.number_input("肿瘤大小", min_value=0.1, max_value=20.0, value=3.0, step=0.1)
-TNM = st.sidebar.number_input("TNM 分期", min_value=1.0, max_value=4.0, value=2.0, step=1.0)
-neoadjuvant = st.sidebar.number_input("是否新辅助治疗", min_value=0.0, max_value=1.0, value=0.0, step=1.0)
 
-# 预测功能
+age = st.sidebar.number_input("年龄 (岁)", min_value=0.0, max_value=120.0, value=50.0, step=1.0)
+BMI = st.sidebar.number_input("BMI (kg/m²)", min_value=10.0, max_value=50.0, value=22.0, step=0.1)
+tumor_dist = st.sidebar.number_input("肿瘤距离 (cm)", min_value=0.0, max_value=50.0, value=5.0, step=0.1)
+surg_time = st.sidebar.number_input("手术时间 (分钟)", min_value=0.0, max_value=600.0, value=180.0, step=1.0)
+exhaust = st.sidebar.number_input("排气天数 (天)", min_value=0.0, max_value=30.0, value=2.0, step=0.5)
+tumor_size = st.sidebar.number_input("肿瘤大小 (cm)", min_value=0.1, max_value=20.0, value=3.0, step=0.1)
+TNM = st.sidebar.number_input("TNM 分期 (数值)", min_value=1.0, max_value=4.0, value=2.0, step=1.0)
+neoadjuvant = st.sidebar.number_input("是否新辅助治疗 (0=否, 1=是)", min_value=0.0, max_value=1.0, value=0.0, step=1.0)# 预测功能
 progress_bar.progress(90)
 if model_loaded:
     if st.button("点击预测"):
